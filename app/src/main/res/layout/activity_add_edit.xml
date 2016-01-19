@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:layout_centerHorizontal="true">
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:layout_marginTop="10dp"
+            android:minWidth="200dp"
+            android:hint="@string/name_hint"
+            android:singleLine="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_bar"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:stepSize="1"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:hint="@string/address_hint"
+            android:singleLine="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/address"
+            android:layout_below="@+id/img"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comment"
+            android:lines='2'
+            android:gravity="center"
+            android:hint="@string/comment_hint"
+            android:textAlignment="center"
+            android:layout_below="@+id/city_country_layout"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:onClick="confirmChanges"
+            android:layout_below="@+id/tags_layout"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@+id/city_country_layout">
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/city_hint"
+                android:gravity="center"
+                android:singleLine="true"
+                android:id="@+id/city"
+                android:layout_marginRight="20dp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/country_hint"
+                android:singleLine="true"
+                android:gravity="center"
+                android:id="@+id/country"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/comment"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tags_layout"
+                android:orientation="horizontal">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/add_tag"
+                    android:width="30dp"
+                    android:onClick="addTag" />
+
+
+                    <com.ns.developer.tagview.widget.TagCloudLinkView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/tags"
+                        android:layout_width="fill_parent"
+                        android:layout_height="120dp"
+                        android:padding="4dp"
+                        android:background="#ffffff"
+                        app:isDeletable="true"
+                        app:tagLayoutColor="#1f5263"
+                        app:tagTextSize="8sp"
+                        app:tagTextColor="#ffffff"
+                        app:deletableTextSize="8sp"
+                        app:deletableTextColor="#ffffff"/>
+
+            </LinearLayout>
+
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:maxWidth="300dp"
+            android:id="@+id/img"
+            android:src="@drawable/add_img"
+            android:clickable="true"
+            android:onClick="addImage"
+            android:layout_below="@+id/rating_bar"
+            android:layout_alignLeft="@+id/rating_bar"
+            android:layout_alignStart="@+id/rating_bar"
+            android:layout_alignRight="@+id/rating_bar"
+            android:layout_alignEnd="@+id/rating_bar"
+            android:contentDescription="@string/add_img_description" />
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
